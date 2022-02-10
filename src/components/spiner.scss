@@ -1,0 +1,209 @@
+.spider-bar {
+  margin-top: 80px;
+  padding: 0 45px;
+  .spider-bar-content{
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+    padding: 45px 0;
+
+    h3{
+      text-align: center;
+      margin-top: 0;
+      font-size: 37px;
+      color: #6C6C6C;
+      margin-bottom: 50px;
+    }
+  }
+  .circle{
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .huge-circle {
+    --size: 300px;
+    height: var(--size);
+    width: var(--size);
+    max-width: var(--size);
+    position: relative;
+    margin: 0 auto;
+    background-color: #3C6656;
+
+    .large-circle {
+      width: calc(var(--size) - 50px);
+      height: calc(var(--size) - 50px);
+      background-color: #00AA76;
+      .big-circle {
+        width: calc(var(--size) - 100px);
+        height: calc(var(--size) - 100px);
+        background-color: #2BBE8D;
+        .medium-circle {
+          width: calc(var(--size) - 150px);
+          height: calc(var(--size) - 150px);
+          background-color: #74C8AC;
+          .small-circle {
+            width: calc(var(--size) - 200px);
+            height: calc(var(--size) - 200px);
+            background-color: #A5DAC4;
+          }
+        }
+      }
+    }
+
+    .result{
+      width: 50%;
+      transform-origin: right center;
+      transform: rotate(90deg);
+      height: 1px;
+      background-color: #ffffff;
+      position: absolute;
+      left: 0;
+
+      .dot{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #EECA30;
+        display: block;
+        position: absolute;
+        right: 0%;
+        top: -4px;
+      }
+
+      &.first{
+        &::before{
+          content: 'Skin Sensitivity';
+          transform: rotate(-90deg);
+          position: absolute;
+          left: -65px;
+          top: 0;
+        }
+      }
+
+      &.second{
+        transform: rotate(140deg);
+        &::before{
+          content: 'Dark Circle';
+          transform: rotate(-140deg);
+          position: absolute;
+          left: -75px;
+          top: -29px;
+        }
+      }
+
+      &.third{
+        transform: rotate(140deg);
+        &::before{
+          content: 'Density';
+          transform: rotate(-140deg);
+          position: absolute;
+          left: -55px;
+          top: -21px;
+        }
+      }
+
+      &.fourth{
+        transform: rotate(240deg);
+        &::before{
+          content: 'Hairloss';
+          transform: rotate(120deg);
+          position: absolute;
+          left: -59px;
+          top: 16px;
+        }
+      }
+      &.fifth{
+        transform: rotate(290deg);
+        &::before{
+          content: 'Scalp Keratin';
+          transform: rotate(70deg);
+          position: absolute;
+          left: -73px;
+          top: -37px;
+        }
+      }
+
+      &.sixth{
+        transform: rotate(340deg);
+        &::before{
+          content: 'Scalp Redness';
+          transform: rotate(20deg);
+          position: absolute;
+          left: -113px;
+          top: -27px;
+        }
+      }
+      &.seventh{
+        transform: rotate(51deg);
+        &::before{
+          content: 'Thickness';
+          transform: rotate(-50deg);
+          position: absolute;
+          left: -72px;
+          top: 16px;
+        }
+      }
+    }
+    @media screen and (max-width: 568px) {
+      --size: 240px;
+      height: var(--size);
+      width: var(--size);
+      max-width: var(--size);
+      position: relative;
+      .large-circle {
+        width: calc(var(--size) - 40px) !important;
+        height: calc(var(--size) - 40px) !important;
+        .big-circle {
+          width: calc(var(--size) - 80px) !important;
+          height: calc(var(--size) - 80px) !important;
+          .medium-circle {
+            width: calc(var(--size) - 120px) !important;
+            height: calc(var(--size) - 120px) !important;
+            .small-circle {
+              width: calc(var(--size) - 160px) !important;
+              height: calc(var(--size) - 160px) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .result-info{
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .result-info-item{
+      display: flex;
+      align-items: center;
+      font-size: 19px;
+      margin-bottom: 10px;
+      .result-info-item-color{
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+
+        &.result-info-item-color-excellent{
+          background-color: #74C8AC;
+        }
+        &.result-info-item-color-good{
+          background-color: #2BBE8D;
+        }
+        &.result-info-item-color-moderate{
+          background-color: #00AA76;
+        }
+        &.result-info-item-color-poor{
+          background-color: #3C6656;
+        }
+        &.result-info-item-color-very-poor{
+          background-color: #3C6656;
+        }
+      }
+
+    }
+  }
+}

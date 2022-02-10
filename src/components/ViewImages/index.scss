@@ -1,0 +1,126 @@
+.view-images {
+  padding: 50px;
+
+  .view-images-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3{
+    text-align: center;
+    margin-top: 0;
+    font-size: 37px;
+    color: #6C6C6C;
+    margin-bottom: 35px;
+  }
+
+  .view-images-result-info{
+    background-color: #E9E9E9;
+    display: flex;
+    border-radius: 51px;
+    width: 800px;
+    max-width: 90%;
+    justify-content: space-between;
+    padding: 27px 40px;
+    margin-bottom: 39px;
+
+    h4{
+      font-size: 34px;
+      margin: 0;
+      text-transform: capitalize;
+
+      &.excellent{
+        color: #0D8400;
+      }
+      &.good{
+        color: #0D8400;
+      }
+      &.moderate{
+        color: #FFAA00;
+      }
+      &.poor{
+        color: #FF0000;
+      }
+      &.very-poor{
+        color: #FF0000;
+      }
+    }
+  }
+
+  .view-images-select{
+    display: flex;
+    justify-content: center;
+    color: #555555;
+    margin-bottom: 60px;
+    max-width: 100%;
+    flex-wrap: wrap;
+
+
+    .view-images-select-item{
+      font-size: 18px;
+      padding: 15px 30px;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      &.active{
+        background-color: #555555;
+        color: #ffffff;
+      }
+
+        border: 1px solid #707070;
+    }
+    &.border{
+      border-width: 0px;
+      margin-top: 50px;
+
+      .view-images-select-item{
+        border-width: 1px;
+      }
+    }
+  }
+
+  .view-images-carousel-content{
+    width: 520px;
+    padding: 0 16px;
+    .view-images-carousel-item{
+      height: 429px;
+
+      padding: 0 70px;
+      .view-images-carousel-item-content{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: #000000;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .carousel{
+    &.carousel.carousel-slider .control-arrow {
+      width: 35px!important;
+      background-color: transparent;
+      opacity: 1;
+      &.control-prev{
+        &::before{
+          content: url("/images/arrow.svg");
+          transform: rotate(180deg);
+          border: none;
+        }
+      }
+      &.control-next{
+        &::before{
+          content: url("/images/arrow.svg");
+          border: none;
+          transform: translateX(-10px);
+        }
+      }
+    }
+  }
+
+
+}
