@@ -33,6 +33,9 @@ body{
   .col-poor{
     width: 20%;
   }
+  .box p{
+    color: #848484;
+  }
 
   .title-row{
     display: flex;
@@ -64,8 +67,10 @@ body{
   padding: 0;
   font-family: "Segoe UI", sans-serif;
   .header{
-    background-color: #3C6656;
+    background-color: #AFC1D2;
     display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
 
     justify-content: center;
     align-items: center;
@@ -261,7 +266,7 @@ body{
     .pores{
       background-color: #ffffff;
       padding: 12px 44px 30px 36px;
-      &:nth-child(even){
+      &:nth-child(odd){
         background-color: #E9E9E9;
       }
       .title-hyd{

@@ -29,24 +29,24 @@
     max-width: var(--size);
     position: relative;
     margin: 0 auto;
-    background-color: #3C6656;
+    background-color: #4D5F75;
 
     .large-circle {
       width: calc(var(--size) - 50px);
       height: calc(var(--size) - 50px);
-      background-color: #00AA76;
+      background-color: #617793;
       .big-circle {
         width: calc(var(--size) - 100px);
         height: calc(var(--size) - 100px);
-        background-color: #2BBE8D;
+        background-color: #93A9C6;
         .medium-circle {
           width: calc(var(--size) - 150px);
           height: calc(var(--size) - 150px);
-          background-color: #74C8AC;
+          background-color: #BDC8D8;
           .small-circle {
             width: calc(var(--size) - 200px);
             height: calc(var(--size) - 200px);
-            background-color: #A5DAC4;
+            background-color: #D1B6D2;
           }
         }
       }
@@ -65,9 +65,10 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #EECA30;
+        background-color: #FFFF00;
         display: block;
         position: absolute;
+        box-shadow: 0 2px 4px #999999;
         right: 0%;
         top: -4px;
       }
@@ -182,25 +183,28 @@
       align-items: center;
       font-size: 19px;
       margin-bottom: 10px;
+      color: #707070;
       .result-info-item-color{
         width: 30px;
         height: 30px;
         margin-right: 12px;
+        border-radius: 5px;
+        border: 1px solid #707070;
 
         &.result-info-item-color-excellent{
-          background-color: #74C8AC;
+          background-color: #D1B6D2;
         }
         &.result-info-item-color-good{
-          background-color: #2BBE8D;
+          background-color: #BDC8D8;
         }
         &.result-info-item-color-moderate{
-          background-color: #00AA76;
+          background-color: #93A9C6;
         }
         &.result-info-item-color-poor{
-          background-color: #3C6656;
+          background-color: #617793;
         }
         &.result-info-item-color-very-poor{
-          background-color: #3C6656;
+          background-color: #4D5F75;
         }
       }
 
