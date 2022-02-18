@@ -9,10 +9,31 @@ import ViewImages from "../components/ViewImages";
 
 const Result = (props) => {
     const [data, setData] = useState({});
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
 
     useEffect(() => {
-        if (props.location.search?.split("batch_id=")[1]){
-            axios.get("https://v2-analysis.chowis.com:3331/web-result/cndphair/" + props.location.search?.split("batch_id=")[1])
+        if (props.location.search.includes('batch_id') && props.location.search.includes('customer_id')) {
+            let temp = props.location.search?.split("&");
+            let obj = {};
+            temp[0] = temp[0].substr(1);
+            obj[temp[0].split('=')[0]] = temp[0].split('=')[1];
+            obj[temp[1].split('=')[0]] = temp[1].split('=')[1];
+            axios.post("https://v2-app.chowis.com/api/customers/generate_token")
+                .then(res => {
+                    console.log(res.data.token);
+                    axios.get("https://v2-app.chowis.com/api/customers/" + obj.customer_id, {
+                        headers: {
+                            'X-CHOWIS-TOKEN': res.data.token
+                        }
+                    })
+                        .then(response => {
+                            console.log(response)
+                            setName(response.data.name);
+                            setSurname(response.data.surname);
+                        })
+                })
+            axios.get("https://v2-analysis.chowis.com:3331/web-result/cndphair/"   + obj.batch_id)
                 .then((res) => {
                     if (res.data.body){
                         setData({
@@ -57,7 +78,7 @@ const Result = (props) => {
             <div className="analysis-result">
                 <div className="">
                     <div className="name-person">
-                        <h5>ALEXANDer chuY - ANALYSIS Result</h5>
+                        <h5>{name && surname ? name + " " + surname + "-" : ""} ANALYSIS Result</h5>
                     </div>
                     {/*<p className="date-analysis">June 22, 2020 - 05:30:20</p>*/}
                     <p className="date-analysis">{data.density && (data.density.date.substr(0, 10) + " " + data.density.time.substr(0, 5))}</p>
