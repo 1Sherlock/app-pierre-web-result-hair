@@ -26,12 +26,12 @@ const SpiderBar = ({data}) => {
                     <div>
                         <div className="result-info-item">
                             <div className="result-info-item-color result-info-item-color-excellent"/>
-                            Excellent
+                            Very poor
                         </div>
                         <div className="result-info-item">
 
                             <div className="result-info-item-color result-info-item-color-good"/>
-                            Good
+                            Poor
                         </div>
                         <div className="result-info-item">
 
@@ -41,12 +41,12 @@ const SpiderBar = ({data}) => {
                         <div className="result-info-item">
 
                             <div className="result-info-item-color result-info-item-color-poor"/>
-                            Poor
+                            Good
                         </div>
                         <div className="result-info-item">
 
                             <div className="result-info-item-color result-info-item-color-very-poor"/>
-                            Very poor
+                            Excellent
                         </div>
                     </div>
                 </div>

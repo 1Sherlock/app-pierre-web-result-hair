@@ -55,15 +55,15 @@ const Result = (props) => {
     const getBackgroundColor = (item, value) => {
         if (item === 'density' || item === 'hairloss' || item === 'scalpKeratin' || item === 'scalpRedness' || item === "thickness") {
             if (value >= 0 && value <= 20) {
-                return 'excellent'
-            } else if (value > 20 && value <= 30) {
-                return 'good'
-            } else if (value > 30 && value <= 50) {
-                return 'moderate'
-            } else if (value > 50 && value <= 80) {
-                return 'poor'
-            } else if (value > 80) {
                 return 'very-poor'
+            } else if (value > 20 && value <= 40) {
+                return 'poor'
+            } else if (value > 40 && value <= 60) {
+                return 'moderate'
+            } else if (value > 60 && value <= 80) {
+                return 'good'
+            } else if (value > 80) {
+                return 'excellent'
             }
         }
     }
@@ -98,19 +98,19 @@ const Result = (props) => {
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very Poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
@@ -154,19 +154,19 @@ const Result = (props) => {
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
@@ -201,7 +201,7 @@ const Result = (props) => {
 
                 <div className="pores">
                     <div className="title-hyd">
-                        <h5>Scalp Keratin</h5>
+                        <h5>Dead skin cells</h5>
                         <p>Result : <span
                             className={`hyd-result ${getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)}`}>{getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)?.replace('-', ' ')}</span>
                         </p>
@@ -210,19 +210,19 @@ const Result = (props) => {
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
@@ -257,7 +257,7 @@ const Result = (props) => {
 
                 <div className="pores">
                     <div className="title-hyd">
-                        <h5>Scalp Redness</h5>
+                        <h5>Sensitivity</h5>
                         <p>Result : <span
                             className={`hyd-result ${getBackgroundColor('scalpRedness', data.scalpRedness?.value)}`}>{getBackgroundColor('scalpRedness', data.scalpRedness?.value)?.replace('-', ' ')}</span>
                         </p>
@@ -266,19 +266,19 @@ const Result = (props) => {
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
@@ -322,19 +322,19 @@ const Result = (props) => {
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
