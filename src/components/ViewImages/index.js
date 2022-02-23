@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./index.scss"
 import {Carousel} from 'react-responsive-carousel';
+import {calculateValue} from "../../tools";
 
 const ViewImages = ({data}) => {
 
@@ -13,16 +14,16 @@ const ViewImages = ({data}) => {
     }, [data])
 
     const getBackgroundColor = (item, value) => {
-        if (item === 'density' || item === 'hairloss' || item === 'scalpKeratin' || item === 'scalpRedness' || item === 'thickness'){
-            if (value >= 0 && value <= 20){
+        if (item === 'density' || item === 'hairloss' || item === 'scalpKeratin' || item === 'scalpRedness' || item === "thickness") {
+            if (value >= 0 && value <= 20) {
                 return 'very-poor'
-            } else if (value > 20 && value <= 40){
+            } else if (value > 20 && value <= 40) {
                 return 'poor'
-            } else if (value > 40 && value <= 60){
+            } else if (value > 40 && value <= 60) {
                 return 'moderate'
-            } else if (value > 60 && value <= 80){
+            } else if (value > 60 && value <= 80) {
                 return 'good'
-            } else if (value > 80){
+            } else if (value > 80) {
                 return 'excellent'
             }
         }
@@ -36,7 +37,7 @@ const ViewImages = ({data}) => {
 
                 <div className="view-images-result-info">
                     <h4> {selectedKey === "scalpRedness" ? "Sensitivity" : selectedKey === "scalpKeratin" ? "Dead skin cells" : selectedKey}</h4>
-                    <h4 className={getBackgroundColor(selectedKey, data[selectedKey]?.value)}>{getBackgroundColor(selectedKey, data[selectedKey]?.value)?.replace('-', ' ')}</h4>
+                    <h4 className={getBackgroundColor(selectedKey, calculateValue(selectedKey, data[selectedKey]?.value))}>{getBackgroundColor(selectedKey, calculateValue(selectedKey, data[selectedKey]?.value))?.replace('-', ' ')}</h4>
                 </div>
 
                 <div className="view-images-select">

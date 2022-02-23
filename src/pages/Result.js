@@ -6,6 +6,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import SpiderBar from "../components";
 import ViewImages from "../components/ViewImages";
+import {calculateValue} from "../tools";
 
 const Result = (props) => {
     const [data, setData] = useState({});
@@ -91,7 +92,7 @@ const Result = (props) => {
                     <div className="title-hyd">
                         <h5>Density</h5>
                         <p>Result : <span
-                            className={`hyd-result ${getBackgroundColor('density', data.density?.value)}`}>{getBackgroundColor('density', data.density?.value)?.replace('-', ' ')}</span>
+                            className={`hyd-result ${getBackgroundColor('density', calculateValue('density', data.density?.value))}`}>{getBackgroundColor('density',calculateValue('density', data.density?.value))?.replace('-', ' ')}</span>
                         </p>
                     </div>
 
@@ -114,8 +115,8 @@ const Result = (props) => {
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.density?.value + "%"}}
-                                 className={getBackgroundColor('density', data.density?.value)}/>
+                            <div style={{width: calculateValue('density', data.density?.value) + "%"}}
+                                 className={getBackgroundColor('density', calculateValue('density', data.density?.value))}/>
                         </div>
                     </div>
 
@@ -147,7 +148,7 @@ const Result = (props) => {
                     <div className="title-hyd">
                         <h5>Hairloss</h5>
                         <p>Result : <span
-                            className={`hyd-result ${getBackgroundColor('hairloss', data.hairloss?.value)}`}>{getBackgroundColor('hairloss', data.hairloss?.value)?.replace('-', ' ')}</span>
+                            className={`hyd-result ${getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))}`}>{getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))?.replace('-', ' ')}</span>
                         </p>
                     </div>
 
@@ -170,8 +171,8 @@ const Result = (props) => {
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.hairloss?.value + "%"}}
-                                 className={getBackgroundColor('hairloss', data.hairloss?.value)}/>
+                            <div style={{width: calculateValue('hairloss', data.hairloss?.value) + "%"}}
+                                 className={getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))}/>
                         </div>
                     </div>
 
@@ -203,7 +204,7 @@ const Result = (props) => {
                     <div className="title-hyd">
                         <h5>Dead skin cells</h5>
                         <p>Result : <span
-                            className={`hyd-result ${getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)}`}>{getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)?.replace('-', ' ')}</span>
+                            className={`hyd-result ${getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))}`}>{getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))?.replace('-', ' ')}</span>
                         </p>
                     </div>
 
@@ -226,8 +227,8 @@ const Result = (props) => {
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.scalpKeratin?.value + "%"}}
-                                 className={getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)}/>
+                            <div style={{width: calculateValue('scalpKeratin', data.scalpKeratin?.value) + "%"}}
+                                 className={getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))}/>
                         </div>
                     </div>
 
@@ -259,7 +260,7 @@ const Result = (props) => {
                     <div className="title-hyd">
                         <h5>Sensitivity</h5>
                         <p>Result : <span
-                            className={`hyd-result ${getBackgroundColor('scalpRedness', data.scalpRedness?.value)}`}>{getBackgroundColor('scalpRedness', data.scalpRedness?.value)?.replace('-', ' ')}</span>
+                            className={`hyd-result ${getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))}`}>{getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))?.replace('-', ' ')}</span>
                         </p>
                     </div>
 
@@ -282,8 +283,8 @@ const Result = (props) => {
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.scalpRedness?.value + "%"}}
-                                 className={getBackgroundColor('scalpRedness', data.scalpRedness?.value)}/>
+                            <div style={{width: calculateValue('scalpRedness', data.scalpRedness?.value) + "%"}}
+                                 className={getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))}/>
                         </div>
                     </div>
 
@@ -315,7 +316,7 @@ const Result = (props) => {
                     <div className="title-hyd">
                         <h5>Thickness</h5>
                         <p>Result : <span
-                            className={`hyd-result ${getBackgroundColor('thickness', data.thickness?.value)}`}>{getBackgroundColor('thickness', data.thickness?.value)?.replace('-', ' ')}</span>
+                            className={`hyd-result ${getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))}`}>{getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))?.replace('-', ' ')}</span>
                         </p>
                     </div>
 
@@ -338,8 +339,8 @@ const Result = (props) => {
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.thickness?.value + "%"}}
-                                 className={getBackgroundColor('thickness', data.thickness?.value)}/>
+                            <div style={{width: calculateValue('thickness', data.thickness?.value) + "%"}}
+                                 className={getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))}/>
                         </div>
                     </div>
 
