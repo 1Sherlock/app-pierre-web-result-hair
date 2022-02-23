@@ -1,5 +1,6 @@
 import React from 'react';
 import "./spiner.scss";
+import {calculateValue} from "../tools";
 
 const SpiderBar = ({data}) => {
     return (
@@ -15,23 +16,34 @@ const SpiderBar = ({data}) => {
                         </div>
                     </div>
 
-                    <div className="result third"><span className="dot" style={{right: data.density?.value +"%"}}/></div>
-                    <div className="result fourth"><span className="dot" style={{right: data.hairloss?.value + "%"}}/></div>
-                    <div className="result fifth"><span className="dot" style={{right: data.scalpKeratin?.value +"%"}}/></div>
-                    <div className="result sixth"><span className="dot" style={{right: data.scalpRedness?.value +"%"}}/></div>
-                    <div className="result seventh"><span className="dot" style={{right: data.thickness?.value +"%"}}/></div>
+                    <div className="result third"><span className="dot"
+                                                        style={{right: calculateValue('density', data.density?.value) + "%"}}/>
+                    </div>
+                    <div className="result fourth"><span className="dot"
+                                                         style={{right: calculateValue('hairloss', data.hairloss?.value) + "%"}}/>
+                    </div>
+                    <div className="result fifth"><span className="dot"
+                                                        style={{right: calculateValue('scalpKeratin', data.scalpKeratin?.value) + "%"}}/>
+                    </div>
+                    <div className="result sixth"><span className="dot"
+                                                        style={{right: calculateValue('scalpRedness', data.scalpRedness?.value) + "%"}}/>
+                    </div>
+                    <div className="result seventh"><span className="dot"
+                                                          style={{right: calculateValue('thickness', data.thickness?.value) + "%"}}/>
+                    </div>
                 </div>
 
                 <div className="result-info">
                     <div>
                         <div className="result-info-item">
                             <div className="result-info-item-color result-info-item-color-excellent"/>
-                            Excellent
+
+                            Very poor
                         </div>
                         <div className="result-info-item">
-
                             <div className="result-info-item-color result-info-item-color-good"/>
-                            Good
+
+                            Poor
                         </div>
                         <div className="result-info-item">
 
@@ -39,14 +51,14 @@ const SpiderBar = ({data}) => {
                             Moderate
                         </div>
                         <div className="result-info-item">
-
                             <div className="result-info-item-color result-info-item-color-poor"/>
-                            Poor
+
+                            Good
                         </div>
                         <div className="result-info-item">
-
                             <div className="result-info-item-color result-info-item-color-very-poor"/>
-                            Very poor
+
+                            Excellent
                         </div>
                     </div>
                 </div>

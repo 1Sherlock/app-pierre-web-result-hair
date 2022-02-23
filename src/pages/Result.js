@@ -6,6 +6,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import SpiderBar from "../components";
 import ViewImages from "../components/ViewImages";
+import {calculateValue} from "../tools";
 
 const Result = (props) => {
     const [data, setData] = useState({});
@@ -52,17 +53,17 @@ const Result = (props) => {
     console.log(data);
 
     const getBackgroundColor = (item, value) => {
-        if (item === 'density' || item === 'hairloss' || item === 'scalpKeratin' || item === 'scalpRedness' || item === "thickness"){
-            if (value >=0 && value <= 20){
-                return 'excellent'
-            } else if (value > 20 && value <= 30){
-                return 'good'
-            } else if (value > 30 && value <= 50){
-                return 'moderate'
-            } else if (value > 50 && value <= 80){
-                return 'poor'
-            } else if (value > 80){
+        if (item === 'density' || item === 'hairloss' || item === 'scalpKeratin' || item === 'scalpRedness' || item === "thickness") {
+            if (value >= 0 && value <= 20) {
                 return 'very-poor'
+            } else if (value > 20 && value <= 40) {
+                return 'poor'
+            } else if (value > 40 && value <= 60) {
+                return 'moderate'
+            } else if (value > 60 && value <= 80) {
+                return 'good'
+            } else if (value > 80) {
+                return 'excellent'
             }
         }
     }
@@ -94,29 +95,32 @@ const Result = (props) => {
                 <div className="pores">
                     <div className="title-hyd">
                         <h5>Density</h5>
-                        <p>Result : <span className={`hyd-result ${getBackgroundColor('density', data.density?.value)}`}>{getBackgroundColor('density', data.density?.value)?.replace('-', ' ')}</span></p>
+                        <p>Result : <span
+                            className={`hyd-result ${getBackgroundColor('density', calculateValue('density', data.density?.value))}`}>{getBackgroundColor('density',calculateValue('density', data.density?.value))?.replace('-', ' ')}</span>
+                        </p>
                     </div>
 
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very Poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.density?.value+"%"}} className={getBackgroundColor('density', data.density?.value)}/>
+                            <div style={{width: calculateValue('density', data.density?.value) + "%"}}
+                                 className={getBackgroundColor('density', calculateValue('density', data.density?.value))}/>
                         </div>
                     </div>
 
@@ -147,29 +151,32 @@ const Result = (props) => {
                 <div className="pores">
                     <div className="title-hyd">
                         <h5>Hairloss</h5>
-                        <p>Result : <span className={`hyd-result ${getBackgroundColor('hairloss', data.hairloss?.value)}`}>{getBackgroundColor('hairloss', data.hairloss?.value)?.replace('-', ' ')}</span></p>
+                        <p>Result : <span
+                            className={`hyd-result ${getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))}`}>{getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))?.replace('-', ' ')}</span>
+                        </p>
                     </div>
 
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.hairloss?.value+"%"}} className={getBackgroundColor('hairloss', data.hairloss?.value)}/>
+                            <div style={{width: calculateValue('hairloss', data.hairloss?.value) + "%"}}
+                                 className={getBackgroundColor('hairloss', calculateValue('hairloss', data.hairloss?.value))}/>
                         </div>
                     </div>
 
@@ -199,30 +206,33 @@ const Result = (props) => {
 
                 <div className="pores">
                     <div className="title-hyd">
-                        <h5>Scalp Keratin</h5>
-                        <p>Result : <span className={`hyd-result ${getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)}`}>{getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)?.replace('-', ' ')}</span></p>
+                        <h5>Dead skin cells</h5>
+                        <p>Result : <span
+                            className={`hyd-result ${getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))}`}>{getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))?.replace('-', ' ')}</span>
+                        </p>
                     </div>
 
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.scalpKeratin?.value+"%"}} className={getBackgroundColor('scalpKeratin', data.scalpKeratin?.value)}/>
+                            <div style={{width: calculateValue('scalpKeratin', data.scalpKeratin?.value) + "%"}}
+                                 className={getBackgroundColor('scalpKeratin', calculateValue('scalpKeratin', data.scalpKeratin?.value))}/>
                         </div>
                     </div>
 
@@ -252,30 +262,33 @@ const Result = (props) => {
 
                 <div className="pores">
                     <div className="title-hyd">
-                        <h5>Scalp Redness</h5>
-                        <p>Result : <span className={`hyd-result ${getBackgroundColor('scalpRedness', data.scalpRedness?.value)}`}>{getBackgroundColor('scalpRedness', data.scalpRedness?.value)?.replace('-', ' ')}</span></p>
+                        <h5>Sensitivity</h5>
+                        <p>Result : <span
+                            className={`hyd-result ${getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))}`}>{getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))?.replace('-', ' ')}</span>
+                        </p>
                     </div>
 
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.scalpRedness?.value+"%"}} className={getBackgroundColor('scalpRedness', data.scalpRedness?.value)}/>
+                            <div style={{width: calculateValue('scalpRedness', data.scalpRedness?.value) + "%"}}
+                                 className={getBackgroundColor('scalpRedness', calculateValue('scalpRedness', data.scalpRedness?.value))}/>
                         </div>
                     </div>
 
@@ -306,29 +319,32 @@ const Result = (props) => {
                 <div className="pores">
                     <div className="title-hyd">
                         <h5>Thickness</h5>
-                        <p>Result : <span className={`hyd-result ${getBackgroundColor('thickness', data.thickness?.value)}`}>{getBackgroundColor('thickness', data.thickness?.value)?.replace('-', ' ')}</span></p>
+                        <p>Result : <span
+                            className={`hyd-result ${getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))}`}>{getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))?.replace('-', ' ')}</span>
+                        </p>
                     </div>
 
                     <div className="process-bar">
                         <div className="title-row">
                             <div className="box box-one">
-                                <p>Excellent</p>
+                                <p>Very poor</p>
                             </div>
                             <div className="box box-two">
-                                <p>Good</p>
+                                <p>Poor</p>
                             </div>
                             <div className="box box-three">
                                 <p>Moderate</p>
                             </div>
                             <div className="box box-four">
-                                <p>Poor</p>
+                                <p>Good</p>
                             </div>
                             <div className="box box-five">
-                                <p>Very poor</p>
+                                <p>Excellent</p>
                             </div>
                         </div>
                         <div className="progress">
-                            <div style={{width: data.thickness?.value+"%"}} className={getBackgroundColor('thickness', data.thickness?.value)}/>
+                            <div style={{width: calculateValue('thickness', data.thickness?.value) + "%"}}
+                                 className={getBackgroundColor('thickness', calculateValue('thickness', data.thickness?.value))}/>
                         </div>
                     </div>
 
