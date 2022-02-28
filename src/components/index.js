@@ -6,7 +6,7 @@ const SpiderBar = ({data}) => {
     return (
         <div className="spider-bar">
             <div className="spider-bar-content">
-                <h3>Overall Result</h3>
+                <h3>Tap measurement to view product recommendation</h3>
                 <div className="huge-circle  circle">
                     <div className="large-circle circle">
                         <div className="big-circle circle">

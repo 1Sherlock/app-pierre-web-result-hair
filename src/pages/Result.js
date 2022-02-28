@@ -47,6 +47,7 @@ const Result = (props) => {
                     }
                     console.log(res);
                 })
+
         }
     }, [])
 
@@ -72,8 +73,8 @@ const Result = (props) => {
         <div>
             <div className="header">
                 <div className="header-logo">
-                    <img src="/images/logo.svg" alt=""/>
-                    <p>hair analysis</p>
+                    <img src="/images/logo-pico.svg" alt=""/>
+                    {/*<p>hair analysis</p>*/}
                 </div>
             </div>
 

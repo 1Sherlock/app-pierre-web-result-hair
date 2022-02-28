@@ -33,21 +33,21 @@ const ViewImages = ({data}) => {
     return (
         <div className="view-images">
             <div className="view-images-content">
-                <h3>View Images</h3>
+                {/*<h3>View Images</h3>*/}
 
                 <div className="view-images-result-info">
                     <h4> {selectedKey === "scalpRedness" ? "Sensitivity" : selectedKey === "scalpKeratin" ? "Dead skin cells" : selectedKey}</h4>
                     <h4 className={getBackgroundColor(selectedKey, calculateValue(selectedKey, data[selectedKey]?.value))}>{getBackgroundColor(selectedKey, calculateValue(selectedKey, data[selectedKey]?.value))?.replace('-', ' ')}</h4>
                 </div>
 
-                <div className="view-images-select">
-                    <div className={`view-images-select-item ${type=== 0 ? "active" : ""}`} onClick={() => setType(0)}>
-                        Captured Image
-                    </div>
-                    <div className={`view-images-select-item ${type=== 1 ? "active" : ""}`} onClick={() => setType(1)}>
-                        Analyzed Image
-                    </div>
-                </div>
+                {/*<div className="view-images-select">*/}
+                {/*    <div className={`view-images-select-item ${type=== 0 ? "active" : ""}`} onClick={() => setType(0)}>*/}
+                {/*        Captured Image*/}
+                {/*    </div>*/}
+                {/*    <div className={`view-images-select-item ${type=== 1 ? "active" : ""}`} onClick={() => setType(1)}>*/}
+                {/*        Analyzed Image*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <div className="view-images-carousel-content">
                     <Carousel selectedItem={selectedIndex} onChange={(index)=> {setSelectedIndex(index); setSelectedKey(Object.keys(data).filter(item => data[item]?.original_image_url)[index])}} autoPlay={false} showThumbs={false} showIndicators={false} showStatus={false}>
