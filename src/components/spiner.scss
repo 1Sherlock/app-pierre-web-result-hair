@@ -29,24 +29,24 @@
     max-width: var(--size);
     position: relative;
     margin: 0 auto;
-    background-color: #3C6656;
+    background-color: #0E4174;
 
     .large-circle {
       width: calc(var(--size) - 50px);
       height: calc(var(--size) - 50px);
-      background-color: #00AA76;
+      background-color: #0E4174;
       .big-circle {
         width: calc(var(--size) - 100px);
         height: calc(var(--size) - 100px);
-        background-color: #2BBE8D;
+        background-color: #286FB6;
         .medium-circle {
           width: calc(var(--size) - 150px);
           height: calc(var(--size) - 150px);
-          background-color: #74C8AC;
+          background-color: #70B4F7;
           .small-circle {
             width: calc(var(--size) - 200px);
             height: calc(var(--size) - 200px);
-            background-color: #A5DAC4;
+            background-color: #B6DAFD;
           }
         }
       }
@@ -65,7 +65,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #EECA30;
+        background-color: #ffffff;
         display: block;
         position: absolute;
         right: 0%;
@@ -172,35 +172,45 @@
   }
 
   .result-info{
-    margin-top: 64px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: #58A4EF;
+    width: 747px;
+    max-width: 100%;
+    margin: 64px auto;
+    color: #ffffff;
+    padding: 36px;
 
+    @media (max-width: 650px){
+      display: block;
+    }
     .result-info-item{
       display: flex;
       align-items: center;
       font-size: 19px;
-      margin-bottom: 10px;
+      &:first-child{
+        margin-bottom: 20px;
+      }
+      @media (max-width: 650px){
+        margin-bottom: 20px;
+      }
       .result-info-item-color{
         width: 30px;
         height: 30px;
         margin-right: 12px;
 
         &.result-info-item-color-excellent{
-          background-color: #74C8AC;
+          background-color: #B6DAFD;
         }
         &.result-info-item-color-good{
-          background-color: #2BBE8D;
+          background-color: #70B4F7;
         }
         &.result-info-item-color-moderate{
-          background-color: #00AA76;
-        }
-        &.result-info-item-color-poor{
-          background-color: #3C6656;
+          background-color: #286FB6;
         }
         &.result-info-item-color-very-poor{
-          background-color: #3C6656;
+          background-color: #0E4174;
         }
       }
 

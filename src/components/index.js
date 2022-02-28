@@ -37,33 +37,27 @@ const SpiderBar = ({data}) => {
                     <div>
                         <div className="result-info-item">
                             <div className="result-info-item-color result-info-item-color-excellent"/>
-
-                            Very poor
+                            Normal
                         </div>
                         <div className="result-info-item">
                             <div className="result-info-item-color result-info-item-color-good"/>
-
-                            Poor
+                            Pay attention to care
                         </div>
+                    </div>
+                    <div>
                         <div className="result-info-item">
-
                             <div className="result-info-item-color result-info-item-color-moderate"/>
-                            Moderate
-                        </div>
-                        <div className="result-info-item">
-                            <div className="result-info-item-color result-info-item-color-poor"/>
-
-                            Good
+                            Need to care
                         </div>
                         <div className="result-info-item">
                             <div className="result-info-item-color result-info-item-color-very-poor"/>
-
-                            Excellent
+                            Intensive care needed
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
+
         </div>
     );
 };

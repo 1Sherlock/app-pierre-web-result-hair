@@ -72,7 +72,8 @@ const Result = (props) => {
         <div>
             <div className="header">
                 <div className="header-logo">
-                    <img src="/images/logo.png" alt=""/>
+                    <img src="/images/logo.svg" alt=""/>
+                    <p>hair analysis</p>
                 </div>
             </div>
 
@@ -87,11 +88,7 @@ const Result = (props) => {
             </div>
 
             <div className="process-part">
-                <div className="icon-average">
-                    <img src="/images/icon-average.png" alt="" className=""/>
-                    <p>Average per age group</p>
-                </div>
-
+                <div/>
                 <div className="pores">
                     <div className="title-hyd">
                         <h5>Density</h5>
@@ -430,6 +427,11 @@ const Result = (props) => {
 
             <SpiderBar data={data}/>
             <ViewImages data={data}/>
+            <div className="version">
+                <img src="/images/povered.svg" alt="powered.svg"/>
+                <p>                version 1.0.0
+                </p>
+            </div>
         </div>
     );
 };
