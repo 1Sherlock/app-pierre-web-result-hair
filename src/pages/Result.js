@@ -34,15 +34,15 @@ const Result = (props) => {
                             setSurname(response.data.surname);
                         })
                 })
-            axios.get("https://v2-analysis.chowis.com:3331/web-result/cndphair/"   + obj.batch_id)
+            axios.get("https://v2-analysis.chowis.com:3881/web-results/cmahair/"   + obj.batch_id)
                 .then((res) => {
-                    if (res.data.body){
+                    if (res.data.data){
                         setData({
-                            density: res.data.body.filter(item => item.measurement === "density")[0],
-                            hairloss: res.data.body.filter(item => item.measurement === "hairloss")[0],
-                            scalpKeratin: res.data.body.filter(item => item.measurement === "scalpKeratin")[0],
-                            scalpRedness: res.data.body.filter(item => item.measurement === "scalpRedness")[0],
-                            thickness: res.data.body.filter(item => item.measurement === "thickness")[0],
+                            density: res.data.data.filter(item => item.measurement === "density")[0],
+                            hairloss: res.data.data.filter(item => item.measurement === "hairloss")[0],
+                            scalpKeratin: res.data.data.filter(item => item.measurement === "scalpKeratin")[0],
+                            scalpRedness: res.data.data.filter(item => item.measurement === "scalpRedness")[0],
+                            thickness: res.data.data.filter(item => item.measurement === "thickness")[0],
                         })
                     }
                     console.log(res);
@@ -68,6 +68,8 @@ const Result = (props) => {
             }
         }
     }
+
+    console.log(data);
 
     return (
         <div>
